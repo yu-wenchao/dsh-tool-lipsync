@@ -1,0 +1,12 @@
+# dsh-tool-lipsync bundle patch: mounts the FreeLipSync UI plugin into the
+# host composition of a dsh profile. The host half opens a local bridge and
+# registers its lipsync_* tools; the client half (dsh.client) mounts the
+# FreeLipSync panel into the DSH web interface.
+- insert:
+    - id: tool-lipsync-ui
+      name: dsh-tool-lipsync
+      config:
+        # 本地 bridge HTTP 端口。客户端面板通过该端口访问 FreeLipSync API。
+        bridgePort: 8790
+        # 会话状态持久化目录；缺省为系统临时目录下的 dsh-lipsync-ui-state。
+        stateDir: null
