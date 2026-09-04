@@ -1,6 +1,6 @@
 {
     "name":  "dsh-tool-lipsync",
-    "version":  "0.1.0",
+    "version":  "0.2.0",
     "description":  "FreeLipSync 对口型口播视频面板 —— 在 DSH 界面内嵌的上传/文本/音频/选模型/免费生成/最近生成操作面板。免 Key 免登录，不消耗模型 token。",
     "type":  "module",
     "main":  "./lib/index.js",
