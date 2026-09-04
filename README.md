@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![DSH Version](https://img.shields.io/badge/DSH-%3E%3D0.1.0--rc.6-orange.svg)](https://github.com/deepseek-ai/deepseek-harness)
 
-**免 Key、免登录**的 AI 对口型口播视频生成插件，为 DeepSeek Harness (DSH) 注册 5 个工具，驱动 [freelipsync.com](https://freelipsync.com/zh-CN) 的免费开放 API。
+**免 Key、免登录**的 AI 对口型口播视频生成插件，为 DeepSeek Harness (DSH) 注册 5 个工具，使用免费开放 API 生成对口型视频。
 
 > 3000+ 声音 · 500+ 语言 · 最长 20 秒 · 无水印 · 1-3 分钟出片
 
@@ -36,7 +36,7 @@
 
 ```bash
 # 在 DSH Web profile 中安装
-dsh plugin --profile web add github:ywconetime/dsh-tool-lipsync
+dsh plugin --profile web add github:yu-wenchao/dsh-tool-lipsync
 ```
 
 安装后重启 DSH 即可生效。
@@ -53,7 +53,7 @@ dsh plugin --profile web add github:ywconetime/dsh-tool-lipsync
 
 ```bash
 # 克隆仓库
-git clone https://github.com/ywconetime/dsh-tool-lipsync.git
+git clone https://github.com/yu-wenchao/dsh-tool-lipsync.git
 
 # 安装到 DSH web profile
 dsh plugin --profile web add ./dsh-tool-lipsync
@@ -104,16 +104,16 @@ dsh plugin --profile web remove dsh-tool-lipsync
 ```
 DSH 对话 → lipsync_generate 工具调用
     ↓
-POST https://freelipsync.com/api/generate
+提交生成任务到后端 API
     ↓
-轮询 POST https://freelipsync.com/api/status/batch
+轮询查询生成状态
     ↓
-GET https://freelipsync.com/api/download/{id}
+下载成片 MP4
     ↓
-保存 MP4 到本地工作区
+保存到本地工作区
 ```
 
-- 首次请求自动访问 `freelipsync.com` 首页建立匿名会话（拿到 `fls_sid` cookie）
+- 首次请求自动建立匿名会话
 - 所有 API 调用完全开放、无 Key、无登录
 - 插件通过 HTTP 代理绕过浏览器限制
 
@@ -148,7 +148,7 @@ dsh-tool-lipsync/
 
 - DeepSeek Harness >= 0.1.0-rc.6
 - Node.js >= 18
-- 网络连接（调用 freelipsync.com API）
+- 网络连接
 
 ---
 
@@ -156,8 +156,8 @@ dsh-tool-lipsync/
 
 - 免费层输出为**低清 preview** 版；高清无水印原片需登录/付费
 - 本插件依赖第三方免费服务，其免费额度与接口随时可能调整
-- 请遵守 [freelipsync 服务条款](https://freelipsync.com)，注意素材/肖像版权
-- 后端接口是从前端逆向得到的未公开接口，未来可能变动
+- 请注意素材/肖像版权
+- 后端接口未来可能变动
 
 ---
 
@@ -190,5 +190,4 @@ MIT License
 ## 相关链接
 
 - [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)
-- [FreeLipSync](https://freelipsync.com/zh-CN)
 - [Awesome DSH Plugin](https://awesome-dsh-plugin.com)
