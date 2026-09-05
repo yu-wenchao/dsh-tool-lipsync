@@ -9,6 +9,8 @@
 > 3000+ 声音 · 500+ 语言 · 最长 20 秒 · 无水印 · 1-3 分钟出片
 
 ---
+<img width="1440" height="739" alt="image" src="https://github.com/user-attachments/assets/31849f67-cdad-4095-ba9d-683e903f5bfe" />
+---
 
 ## 功能一览
 
